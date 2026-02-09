@@ -1,3 +1,3 @@
 export function formatRomanNumeral(number: number): string {
-  return 'I';
+  return !Boolean(number % 2 === 0) ? "I" : "II";
 }
