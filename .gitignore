@@ -1,3 +1,6 @@
 # Project
 .idea/
 .vs/
+
+# Node
+node_modules/
