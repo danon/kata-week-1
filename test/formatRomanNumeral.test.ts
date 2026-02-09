@@ -1,4 +1,4 @@
-import { expect, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import { formatRomanNumeral } from "../src/formatRomanNumeral";
 
 test("1 is I", () => {
@@ -15,4 +15,24 @@ test("3 is III", () => {
 
 test("5 is V", () => {
   expect(formatRomanNumeral(5)).toBe("V");
+});
+
+test("Single digits", () => {
+  const expected = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+  ];
+  const actual = [];
+  for (let i = 1; i <= 10; i++) {
+    actual.push(formatRomanNumeral(i));
+  }
+  expect(actual).toEqual(expected);
 });
