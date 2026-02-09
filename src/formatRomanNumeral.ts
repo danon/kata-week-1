@@ -1,3 +1,6 @@
 export function formatRomanNumeral(number: number): string {
-  return "I".repeat(number);
+  if (5 > number) {
+    return "I".repeat(number);
+  }
+  return "V";
 }
