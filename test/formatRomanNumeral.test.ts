@@ -12,3 +12,7 @@ test("2 is II", () => {
 test("3 is III", () => {
   expect(formatRomanNumeral(3)).toBe("III");
 });
+
+test("5 is V", () => {
+  expect(formatRomanNumeral(5)).toBe("V");
+});
