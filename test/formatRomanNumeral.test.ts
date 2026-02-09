@@ -37,3 +37,7 @@ describe('Single digits', () => {
     });
   });
 });
+
+test("50 is L", () => {
+  expect(formatRomanNumeral(50)).toBe("L");
+});
