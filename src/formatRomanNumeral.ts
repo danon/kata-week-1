@@ -1,10 +1,14 @@
 export function formatRomanNumeral(number: number): string {
-  if (number >= 10) {
-    return formatRomanNumeral(Math.floor(number / 10))
-      .replaceAll('X', 'C')
-      .replaceAll('I', 'X')
-      .replaceAll('V', 'L');
-  }
   const expected = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
-  return expected[number];
+
+  let output = expected[number % 10];
+
+  if (number >= 10) {
+    output =
+      expected[Math.floor(number / 10)]
+        .replaceAll("X", "C")
+        .replaceAll("I", "X")
+        .replaceAll("V", "L") + output;
+  }
+  return output;
 }
