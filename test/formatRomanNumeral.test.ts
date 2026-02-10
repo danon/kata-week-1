@@ -1,5 +1,5 @@
-import { describe, expect, test } from "vitest";
-import { formatRomanNumeral } from "../src/formatRomanNumeral";
+import {describe, expect, test} from "vitest";
+import {formatRomanNumeral} from "../src/formatRomanNumeral";
 
 test("1 is I", () => {
   expect(formatRomanNumeral(1)).toBe("I");
@@ -32,7 +32,7 @@ describe("Single digits", () => {
   ];
 
   expected.forEach((expected, index) => {
-    test("Single digit " + (index + 1), () => {
+    test("Single digit: " + (index + 1), () => {
       expect(formatRomanNumeral(index + 1)).toEqual(expected);
     });
   });
@@ -42,8 +42,9 @@ describe("Multiples of 10", () => {
   const expected = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
 
   expected.forEach((expected, index) => {
-    test("Multiple of 10 " + (index + 1), () => {
-      expect(formatRomanNumeral((index + 1) * 10)).toEqual(expected);
+    const multiple = (index + 1) * 10;
+    test("Multiple of 10: " + multiple, () => {
+      expect(formatRomanNumeral(multiple)).toEqual(expected);
     });
   });
 });
