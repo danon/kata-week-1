@@ -1,5 +1,5 @@
-import {describe, expect, test} from "vitest";
-import {formatRomanNumeral} from "../src/formatRomanNumeral";
+import { describe, expect, test } from "vitest";
+import { formatRomanNumeral } from "../src/formatRomanNumeral";
 
 test("1 is I", () => {
   expect(formatRomanNumeral(1)).toBe("I");
@@ -17,7 +17,7 @@ test("5 is V", () => {
   expect(formatRomanNumeral(5)).toBe("V");
 });
 
-describe('Single digits', () => {
+describe("Single digits", () => {
   const expected = [
     "I",
     "II",

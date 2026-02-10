@@ -1,21 +1,10 @@
 export function formatRomanNumeral(number: number): string {
-  if (number < 4) {
-    return "I".repeat(number);
+  if (number == 10) {
+    return "X";
   }
-  if (number === 5) {
-    return "V";
+  if (number == 50) {
+    return "L";
   }
-  const expected = [
-    "",
-    "",
-    "",
-    "IV",
-    "",
-    "VI",
-    "VII",
-    "VIII",
-    "IX",
-    "X",
-  ];
-  return expected[number - 1];
+  const expected = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+  return expected[number];
 }
