@@ -51,3 +51,7 @@ describe("Multiples of 10", () => {
 test("50 is L", () => {
   expect(formatRomanNumeral(50)).toBe("L");
 });
+
+test("11 is XI", () => {
+  expect(formatRomanNumeral(11)).toBe("XI");
+});
