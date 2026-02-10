@@ -38,6 +38,16 @@ describe("Single digits", () => {
   });
 });
 
+describe("Multiples of 10", () => {
+  const expected = ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+
+  expected.forEach((expected, index) => {
+    test("Multiple of 10 " + (index + 1), () => {
+      expect(formatRomanNumeral((index + 1) * 10)).toEqual(expected);
+    });
+  });
+});
+
 test("50 is L", () => {
   expect(formatRomanNumeral(50)).toBe("L");
 });
