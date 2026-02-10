@@ -1,14 +1,25 @@
 export function formatRomanNumeral(number: number): string {
-  const expected = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
+  const expected = [
+    "",
+    "1",
+    "11",
+    "111",
+    "15",
+    "5",
+    "51",
+    "511",
+    "5111",
+    "110",
+  ];
 
-  let output = expected[number % 10];
+  let output = format(expected[number % 10], "I", "V", "X");
 
   if (number >= 10) {
-    output =
-      expected[Math.floor(number / 10)]
-        .replaceAll("X", "C")
-        .replaceAll("I", "X")
-        .replaceAll("V", "L") + output;
+    output = format(expected[Math.floor(number / 10)], "X", "L", "C") + output;
   }
   return output;
+}
+
+function format(code: string, one: string, five: string, ten: string): string {
+  return code.replaceAll("10", ten).replaceAll("1", one).replaceAll("5", five);
 }
